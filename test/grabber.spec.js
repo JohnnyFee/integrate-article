@@ -3,7 +3,7 @@
 var grabber = require('../lib/grabber');
 
 xdescribe('grabber', function () {
-  it('cheeriojs', function () {
+  xit('cheeriojs', function () {
     var a = '<ul id="fruits">' + '<li class="apple">Apple</li>' +
       '<li class="orange">Orange</li>' +
       '<li class="pear">Pear</li>' +
@@ -12,8 +12,8 @@ xdescribe('grabber', function () {
     var cheerio = require('cheerio'),
       $ = cheerio.load(a);
 
-    $ = cheerio('li', 'ul', a);
-    var html = $.html();
+    $ = cheerio(a);
+    var html = $('#fruits').html();
 
     console.log(html);
 

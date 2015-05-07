@@ -7,7 +7,8 @@ var integrator = require('../lib/integrator');
 
 describe('integrator', function () {
   it('integrate', function (done) {
-    var url = 'http://www.dailymail.co.uk/news/article-2297585/Wild-squirrels-pose-charming-pictures-photographer-hides-nuts-miniature-props.html';
+    var url = 'http://bbs.fobshanghai.com/viewthread.php?tid=3885995&extra=&page=1';
+    //var url ="http://www.imooc.com/course/list";
 
     integrator.integrate(url, function (data) {
       if (data) {
