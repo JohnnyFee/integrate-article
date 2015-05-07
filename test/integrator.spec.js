@@ -24,7 +24,7 @@ describe('integrator', function () {
   });
 
   it.only('integrate all', function (done) {
-    var pages = 2;
+    var pages = 124;
     var urls = [];
     var url = 'http://bbs.fobshanghai.com/viewthread.php?tid=3885995&extra=&page={page}';
 
@@ -34,10 +34,8 @@ describe('integrator', function () {
 
 
     integrator.integrate(urls, function (data) {
-      fs.writeFileSync('./download/huahistory.md', data, function(err){
-        console.log(err);
-        done();
-      });
+      fs.writeFileSync('./download/huahistory.md', data);
+      done();
     });
   });
 });
