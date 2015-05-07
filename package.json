@@ -19,9 +19,11 @@
     ""
   ],
   "dependencies": {
+    "async": "^0.9.0",
     "cheerio": "^0.19.0",
     "meow": "^3.1.0",
-    "nodegrass": "0.0.3"
+    "nodegrass": "0.0.3",
+    "to-markdown": "^1.2.0"
   },
   "devDependencies": {
     "chai": "^2.3.0",

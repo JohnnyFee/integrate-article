@@ -4,6 +4,7 @@
 
 'use strict';
 var integrator = require('../lib/integrator');
+var fs = require('fs');
 
 describe('integrator', function () {
   it('integrate', function (done) {
@@ -19,6 +20,24 @@ describe('integrator', function () {
       }
 
       done();
+    });
+  });
+
+  it.only('integrate all', function (done) {
+    var pages = 2;
+    var urls = [];
+    var url = 'http://bbs.fobshanghai.com/viewthread.php?tid=3885995&extra=&page={page}';
+
+    for (var i = 1; i <= pages; i++) {
+      urls.push(url.replace('{page}', i + ""));
+    }
+
+
+    integrator.integrate(urls, function (data) {
+      fs.writeFileSync('./download/huahistory.md', data, function(err){
+        console.log(err);
+        done();
+      });
     });
   });
 });
